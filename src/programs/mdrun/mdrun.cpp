@@ -70,6 +70,15 @@
 
 #include "mdrun_main.h"
 
+#include <sys/time.h>
+
+// Function to get time in seconds
+double mysecond() {
+    struct timeval tp;
+    gettimeofday(&tp, NULL);
+    return ( (double) tp.tv_sec + (double) tp.tv_usec * 1.e-6 );
+}
+
 namespace gmx
 {
 
@@ -267,7 +276,17 @@ int gmx_mdrun(int argc, char* argv[])
 
     auto runner = builder.build();
 
-    return runner.mdrunner();
+    // Get start time
+    double tbegin = mysecond();
+
+    int ret = runner.mdrunner();
+
+    // Get end time
+    double tend = mysecond();
+    double elapsed = tend - tbegin;
+    printf("[MO833]: runner.mdrunner() exec. time: %f", elapsed);
+
+    return ret;
 }
 
 } // namespace gmx
