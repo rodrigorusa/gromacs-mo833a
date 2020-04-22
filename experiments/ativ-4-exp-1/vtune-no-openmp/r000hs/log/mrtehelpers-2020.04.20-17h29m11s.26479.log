@@ -1,0 +1,7 @@
+67 [140681072097024] INFO mrtehelpers.mrteenv <> - Product libs directory: /opt/intel/vtune_profiler_2020.1.0.607630/lib64
+67 [140681072097024] INFO mrtehelpers.mrteenv <> - File mask: amplxe_tpssmrte_clrprof*
+74 [140681072097024] INFO mrtehelpers.mrteenv <> - File name: lib
+74 [140681072097024] INFO mrtehelpers.mrteenv <> - File mask: amplxe_tpssmrte_clrprof*
+80 [140681072097024] INFO mrtehelpers.mrteenv <> - File name: lib
+80 [140681072097024] ERROR mrtehelpers.mrteenv <> - Failed to init shared librarylib located at /opt/intel/vtune_profiler_2020.1.0.607630/lib64, at file: vcs/mrtehelpers3/src/mrteenv/mrte_profiling_initializer.cpp:485
+80 [140681072097024] ERROR mrtehelpers.mrteenv <> - CLR support is disabled because profiler GUID is empty, at file: vcs/mrtehelpers3/src/mrteenv/mrte_profiling_initializer.cpp:308
