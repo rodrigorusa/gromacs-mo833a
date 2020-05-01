@@ -96,10 +96,14 @@ git clone -b ativ-5-exp-1 https://github.com/rodrigorusa/gromacs-mo833a.git
 echo "<IP1> slots=2" > hostfile
 echo "<IP2> slots=2" >> hostfile
 ```
-4. Com o arquivo de IPs criado, execute a aplicação usando o comando:
+4. Verifique se a máquina a qual está logado tem acesso a outra máquina, para isso use o comando:
+```
+ssh <IP da outra maquina>
+```
+5. Com o arquivo de IPs criado e a conexão com a outra máquina verificada, execute a aplicação usando o comando:
 ```
 mpirun -np 4 --hostfile hostfile ../../build/bin/gmx_mpi mdrun -v -deffnm em
 ```
-5. Aguarde o processamento finalizar
-6. Saia da VM
-7. Pare a máquina ou termine-a caso não for utilizá-la mais
+6. Aguarde o processamento finalizar
+7. Saia da VM
+8. Pare a máquina ou termine-a caso não for utilizá-la mais
