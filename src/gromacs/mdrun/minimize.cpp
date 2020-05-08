@@ -103,6 +103,7 @@
 #include "gromacs/utility/fatalerror.h"
 #include "gromacs/utility/logger.h"
 #include "gromacs/utility/smalloc.h"
+#include "gromacs/utility/time.h"
 
 #include "legacysimulator.h"
 #include "shellfc.h"
@@ -2424,6 +2425,11 @@ void LegacySimulator::do_steep()
     bAbort = FALSE;
     while (!bDone && !bAbort)
     {
+        double t_begin = mysecond();
+        if(count == 0) {
+            printf("Init time,%f\n", t_begin - T_START_MAIN);
+        }
+
         bAbort = (nsteps >= 0) && (count == nsteps);
 
         /* set new coordinates, except for first step */
@@ -2553,6 +2559,9 @@ void LegacySimulator::do_steep()
         {
             imdSession->sendPositionsAndEnergies();
         }
+
+        double t_end = mysecond();
+        printf("Iteration,%d,%f,%f\n", count, t_end - t_begin, t_end - T_START_MAIN);
 
         count++;
     } /* End of the loop  */

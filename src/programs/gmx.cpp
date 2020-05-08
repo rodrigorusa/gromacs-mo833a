@@ -44,11 +44,17 @@
 #include "gromacs/selection/selhelp.h"
 #include "gromacs/trajectoryanalysis/modules.h"
 #include "gromacs/utility/exceptions.h"
+#include "gromacs/utility/time.h"
 
 #include "legacymodules.h"
 
+double T_START_MAIN;
+
 int main(int argc, char* argv[])
 {
+    // Get start time
+    T_START_MAIN = mysecond();
+
     gmx::CommandLineProgramContext& context = gmx::initForCommandLine(&argc, &argv);
     try
     {
@@ -58,6 +64,11 @@ int main(int argc, char* argv[])
         manager.addHelpTopic(gmx::createSelectionHelpTopic());
         int rc = manager.run(argc, argv);
         gmx::finalizeForCommandLine();
+
+        // Get total time
+        double t_end = mysecond();
+        printf("Total time,%f\n", t_end - T_START_MAIN);
+
         return rc;
     }
     catch (const std::exception& ex)
