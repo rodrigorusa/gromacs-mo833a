@@ -12,8 +12,9 @@ Para esse experimento o código foi instrumentado seguindo a modificação <http
 O gráfico a seguir ilustra o tempo de cada _paramount iteration_ ao longo da execução da aplicação obtido no experimento realizado.
 ![](./images/paramount_time.png)
 Podemos ver que o tempo de execução das _paramount iterations_ apresenta pequena variação ao longo das iterações. Analisando o dado coletado podemos extrair a seguintes informações:
-| Média 				 |  0,022402 |
+| Medida 				 | Valor     |
 |------------------------|-----------|
+| Média 				 |  0,022402 |
 | Mediana 				 |  0,020883 |
 | Desvio Padrão 		 |  0,008231 |
 | Tempo de Inicialização |  0,080804 |
