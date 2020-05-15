@@ -2564,6 +2564,11 @@ void LegacySimulator::do_steep()
         printf("Iteration,%d,%f,%f\n", count, t_end - t_begin, t_end - T_START_MAIN);
 
         count++;
+
+        // Stop loop with 10 iterations
+        if(count == 10) {
+            bDone = TRUE;
+        }
     } /* End of the loop  */
 
     /* Print some data...  */
