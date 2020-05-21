@@ -23,7 +23,7 @@ O próximo passo foi definir um grupo chamado _GROMACS_ no CLAP e nele foram def
 * _run_
 * _fetch-results_
 
-A ação _setup_ é ação a responsável por instalar dependências, gerar uma chave RSA, clonar o repositório e compilar o _GROMACS_. A segunda ação, _simulation-setup_, é responsável por criar os dados da simulação que será executada a partir do dados de entrada. A _hostifile-setup_ é a ação que cria um arquivo de chamado _hosts_ contendo os IPs dos nós que serão utilizados na execução da aplicação. Para finalizar o _setup_ do cluster, é definida a ação _keys-setup_ que adiciona a chave RSA gerada em cada nó na ação _setup_ no arquivo _~/.ssh/authorized_keys_ de todos os nós, permitindo que os nós tenham acesso entre eles. Por fim essa ação cria um arquivo chamado _config_ no diretório _~/.ssh/_ para desabilitar a verificação de conexão confiável entre os nós. Todas essa ações descritas anteriormente são executadas em todos os nós do cluster.
+A ação _setup_ é ação a responsável por instalar dependências, gerar uma chave RSA, clonar o repositório e compilar o _GROMACS_. A segunda ação, _simulation-setup_, é responsável por criar os dados da simulação que será executada a partir do dados de entrada. A _hostifile-setup_ é a ação que cria um arquivo chamado _hosts_ contendo os IPs dos nós que serão utilizados na execução da aplicação. Para finalizar o _setup_ do cluster, é definida a ação _keys-setup_ que adiciona a chave RSA gerada em cada nó, na ação _setup_, no arquivo _~/.ssh/authorized_keys_ de todos os nós, permitindo que os nós tenham acesso entre eles. Por fim, essa ação cria um arquivo chamado _config_ no diretório _~/.ssh/_ para desabilitar a verificação de conexão confiável entre os nós. Todas essas ações descritas anteriormente são executadas em todos os nós do _cluster_.
 
 Por fim, são definidas as ações _run_ que executa a aplicação gmx do _GROMACS_ utilizando MPI e a ação _fetch-results_ que faz o _download_ dos resultados para uma máquina local. Essas duas ações são executadas apenas no nó master do _cluster_.
 
@@ -32,7 +32,7 @@ Nesse experimento foram criados três configurações de _cluster_:
 * _cluster-t2.micro-4x_: cluster com quatro nós do tipo **t2.micro**
 * _cluster-t2.micro-8x_: cluster com oito nós do tipo **t2.micro**
 
-Para cada configuração foi definido um nó como sendo o nó _master_ e o restante como nós _slaves_ como ilustrado no _cluster-t2.micro-2x_ a seguir:
+Para cada configuração foi definido um nó como sendo o nó _master_ e o restante como nós _slaves_, como ilustrado no _cluster-t2.micro-2x_ a seguir:
 ```
 setups:
   config-node-master:
@@ -91,7 +91,7 @@ clapp cluster action <cluster-id> gromacs run
 clapp cluster action <cluster-id> gromacs fetch-results
 ```
 
-Após a execução dos comandos o resultado do experimento pode ser encontrado nos arquivos _~/.clap/<node-master-id>\_gmx.out_ e _~/.clap/<node-master-id>\_gmx.err_.
+Após a execução dos comandos o resultado do experimento pode ser encontrado nos arquivos _~/.clap/&lt;node-master-id&gt;\_gmx.out_ e _~/.clap/&lt;node-master-id&gt;\_gmx.err_.
 
 ### Resultados
 A seguir é ilustrado o gráfico obtido com a execução da aplicação nos três _clusters_ definidos:
