@@ -1,0 +1,8 @@
+---
+- hosts: all
+  gather_facts: yes
+  tasks:
+  - name: Create simulation data
+    shell: sh create_simulation.sh 1> simulation.out 2> simulation.err
+    args:
+      chdir: ~/gromacs-mo833a/experiments/ativ-7-exp-1

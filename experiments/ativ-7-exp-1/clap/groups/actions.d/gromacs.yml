@@ -1,0 +1,29 @@
+---
+actions:
+  setup:
+    playbook: gromacs/setup.yml
+    descripton: Setup gromacs
+
+  simulation-setup:
+    playbook: gromacs/simulation-setup.yml
+    descripton: Create gromacs simulation
+
+  hostfile-setup:
+    playbook: gromacs/hostfile-setup.yml
+    descripton: Setup hostfile with nodes IPs
+
+  keys-setup:
+    playbook: gromacs/keys-setup.yml
+    descripton: Setup SSH keys
+
+  run:
+    playbook: gromacs/run.yml
+    descripton: Run application
+
+  fetch-results:
+    playbook: gromacs/fetch-results.yml
+    description: Fetch results
+
+hosts:
+- master
+- slave

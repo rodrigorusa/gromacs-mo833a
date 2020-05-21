@@ -1,0 +1,44 @@
+---
+- hosts: all
+  gather_facts: yes
+  tasks:
+  - name: "Ensure that packages are updated"
+    become: yes
+    apt:
+      update_cache: yes
+      cache_valid_time: 3600
+
+  - name: Install packages
+    become: yes
+    apt:
+      pkg:
+        - wget
+        - make
+        - cmake
+        - gcc
+        - libgfortran3
+        - sysstat
+        - libibnetdisc-dev
+        - openmpi-bin
+        - libopenmpi-dev
+        - libhdf5-openmpi-dev
+        - gfortran
+        - build-essential
+        - git
+
+  - name: Create RSA key
+    shell: |
+      cd ~/.ssh/
+      ssh-keygen -f id_rsa -t rsa -N ''
+      cat id_rsa.pub >> authorized_keys
+
+  - name: Clone repository
+    shell:
+      cmd: git clone -b ativ-7-exp-1 https://github.com/rodrigorusa/gromacs-mo833a.git
+
+  - name: Compile
+    shell: sh build.sh 1> compilation.out 2> compilation.err
+    args:
+      chdir: ~/gromacs-mo833a/experiments/ativ-7-exp-1
+    async: 18000
+    poll: 300

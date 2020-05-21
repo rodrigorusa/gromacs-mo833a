@@ -1,0 +1,37 @@
+--------------------------------------------------------------------------
+[[58337,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: ip-172-31-81-66
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+Init time,0.205252
+Init time,0.214910
+Iteration,0,0.068531,0.283441
+Iteration,0,0.069615,0.274867
+Iteration,1,0.062511,0.346000
+Iteration,1,0.062368,0.337351
+Iteration,2,0.062395,0.399853
+Iteration,2,0.062814,0.408862
+Iteration,3,0.062403,0.471311
+Iteration,3,0.062485,0.462459
+Iteration,4,0.062480,0.533839
+Iteration,4,0.062466,0.525043
+Iteration,5,0.062044,0.595931
+Iteration,5,0.062031,0.587193
+Iteration,6,0.061739,0.657717
+Iteration,6,0.061646,0.648957
+Iteration,7,0.062008,0.719771
+Iteration,7,0.061891,0.710965
+Iteration,8,0.062041,0.781861
+Iteration,8,0.062043,0.773122
+Iteration,9,0.062039,0.843948
+Iteration,9,0.061908,0.835146
+Total time,0.909253
+Total time,0.900870

@@ -1,0 +1,18 @@
+login-ubuntu:
+    user: ubuntu
+    keypair_name: otavio_key_us_east_1
+    keypair_public_file: otavio_key_us_east_1.pub
+    keypair_private_file: otavio_key_us_east_1.pem
+    sudo: true
+    sudo_user: root
+    
+login-ubuntu-b:
+    user: ubuntu
+
+user4-login-ubuntu:
+    user: ubuntu
+    keypair_name: mo833-user4
+    keypair_public_file: mo833-user4.pub
+    keypair_private_file: mo833-user4.pem
+    sudo: true
+    sudo_user: root

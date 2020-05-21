@@ -1,0 +1,17 @@
+---
+- hosts: master
+  gather_facts: no
+  tasks:
+  - name: Fetch gmx.out files
+    synchronize:
+      src: ~/gromacs-mo833a/experiments/ativ-7-exp-1/gmx.out
+      dest: ~/.clap/{{inventory_hostname}}_gmx.out
+      mode: pull
+      recursive: yes
+
+  - name: Fetch gmx.err files
+    synchronize:
+      src: ~/gromacs-mo833a/experiments/ativ-7-exp-1/gmx.err
+      dest: ~/.clap/{{inventory_hostname}}_gmx.err
+      mode: pull
+      recursive: yes

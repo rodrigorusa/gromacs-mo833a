@@ -1,0 +1,48 @@
+setups:
+  config-node-master:
+    groups:
+    - name: gromacs/master
+
+    actions:
+    - type: action
+      name: simulation-setup
+      group: gromacs
+
+  config-node-slave:
+    groups:
+    - name: gromacs/slave
+
+    actions:
+    - type: action
+      name: simulation-setup
+      group: gromacs
+  
+  final-config:
+    actions:
+    - type: action
+      name: hostfile-setup
+      group: gromacs
+
+    - type: action
+      name: keys-setup
+      group: gromacs
+      
+clusters:
+  cluster-t2-micro-4x:
+    after_all:
+    - final-config
+
+    nodes:
+      node-master:
+        type: user4-instance
+        count: 1
+        min_count: 1
+        setups: 
+        - config-node-master
+      node-slave:
+        type: user4-instance
+        count: 3
+        min_count: 1
+        setups: 
+        - config-node-slave
+      

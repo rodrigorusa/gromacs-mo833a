@@ -1,0 +1,30 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: Download public keys
+    become: no
+    synchronize:
+      src: ~/.ssh/id_rsa.pub
+      dest: ~/.clap/ssh_keys/{{inventory_hostname}}-id_rsa.pub
+      mode: pull
+      recursive: yes
+
+  - name: Create folder to store keys
+    shell: 
+      cmd: mkdir ssh_keys
+
+  - name: Upload public keys
+    become: no
+    synchronize:
+      src: ~/.clap/ssh_keys/
+      dest: ~/ssh_keys/
+      recursive: yes
+
+  - name: Put keys on authorized_keys file
+    shell: "for f in ./*.pub; do cat $f >> ~/.ssh/authorized_keys; done"
+    args:
+      chdir: ~/ssh_keys
+
+  - name: StrictHostKeyChecking not necessary
+    shell: "touch ~/.ssh/config && echo 'Host * \n    StrictHostKeyChecking no' >> ~/.ssh/config"

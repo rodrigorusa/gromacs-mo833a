@@ -1,0 +1,109 @@
+--------------------------------------------------------------------------
+[[37135,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: ip-172-31-75-153
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+Init time,0.261952
+Init time,0.261591
+Init time,0.261706
+Init time,0.262087
+Init time,0.262015
+Init time,0.262150
+Init time,0.262000
+Init time,0.272257
+Iteration,0,0.049964,0.311964
+Iteration,0,0.049800,0.322057
+Iteration,0,0.050280,0.312430
+Iteration,0,0.050588,0.312675
+Iteration,0,0.050784,0.312799
+Iteration,0,0.051127,0.312718
+Iteration,0,0.051109,0.312815
+Iteration,0,0.051563,0.313515
+Iteration,1,0.020929,0.343065
+Iteration,1,0.021079,0.333145
+Iteration,1,0.020935,0.333731
+Iteration,1,0.020915,0.333753
+Iteration,1,0.021072,0.333627
+Iteration,1,0.020939,0.333857
+Iteration,1,0.020653,0.334287
+Iteration,1,0.020927,0.333855
+Iteration,2,0.020847,0.363983
+Iteration,2,0.020812,0.354673
+Iteration,2,0.020995,0.354253
+Iteration,2,0.020911,0.354655
+Iteration,2,0.020815,0.354775
+Iteration,2,0.020819,0.354782
+Iteration,2,0.021067,0.354904
+Iteration,2,0.020925,0.355310
+Iteration,3,0.020549,0.384574
+Iteration,3,0.020454,0.374793
+Iteration,3,0.020490,0.375244
+Iteration,3,0.020414,0.375429
+Iteration,3,0.020498,0.375385
+Iteration,3,0.020489,0.375895
+Iteration,3,0.020555,0.375345
+Iteration,3,0.020544,0.375439
+Iteration,4,0.023207,0.398081
+Iteration,4,0.023072,0.398418
+Iteration,4,0.023136,0.398575
+Iteration,4,0.023569,0.408186
+Iteration,4,0.023100,0.399092
+Iteration,4,0.023206,0.398744
+Iteration,4,0.023142,0.398686
+Iteration,4,0.023516,0.399024
+Iteration,5,0.020358,0.428766
+Iteration,5,0.020716,0.419383
+Iteration,5,0.020799,0.418961
+Iteration,5,0.020337,0.419484
+Iteration,5,0.020670,0.419465
+Iteration,5,0.020867,0.419377
+Iteration,5,0.020733,0.419600
+Iteration,5,0.020803,0.419981
+Iteration,6,0.022556,0.451365
+Iteration,6,0.022447,0.441924
+Iteration,6,0.022441,0.442011
+Iteration,6,0.022484,0.441952
+Iteration,6,0.022482,0.442546
+Iteration,6,0.022580,0.441626
+Iteration,6,0.022603,0.442189
+Iteration,6,0.022571,0.442283
+Iteration,7,0.020493,0.471900
+Iteration,7,0.020329,0.462072
+Iteration,7,0.020319,0.462706
+Iteration,7,0.020580,0.462596
+Iteration,7,0.020415,0.462713
+Iteration,7,0.020668,0.462725
+Iteration,7,0.020708,0.462830
+Iteration,7,0.020789,0.463418
+Iteration,8,0.020716,0.492657
+Iteration,8,0.020648,0.482829
+Iteration,8,0.020472,0.483312
+Iteration,8,0.020741,0.483415
+Iteration,8,0.020672,0.483472
+Iteration,8,0.020645,0.483470
+Iteration,8,0.020589,0.483532
+Iteration,8,0.020523,0.484015
+Iteration,9,0.020651,0.513349
+Iteration,9,0.020687,0.503599
+Iteration,9,0.020550,0.504050
+Iteration,9,0.020562,0.504144
+Iteration,9,0.020671,0.504073
+Iteration,9,0.020517,0.504148
+Iteration,9,0.020633,0.504201
+Iteration,9,0.020581,0.504674
+Total time,0.582393
+Total time,0.573015
+Total time,0.573171
+Total time,0.572708
+Total time,0.573250
+Total time,0.573687
+Total time,0.573440
+Total time,0.573392

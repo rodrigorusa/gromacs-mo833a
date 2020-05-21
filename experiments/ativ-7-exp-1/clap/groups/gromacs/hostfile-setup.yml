@@ -1,0 +1,22 @@
+---
+- hosts: all
+  gather_facts: yes
+  tasks:
+  - name: Remove hosts file
+    file:
+      path: /home/ubuntu/hosts
+      state: absent
+
+  - name: Create hosts file
+    file:
+      path: /home/ubuntu/hosts
+      state: touch
+
+  - name: Add Private IP to /home/ubuntu/hosts
+    blockinfile:
+      marker: ""
+      path: /home/ubuntu/hosts
+      block: |
+        {% for host in groups['all'] %}
+        {{ hostvars[host]['ansible_env'].SSH_CONNECTION.split(' ')[2] }} slots=1
+        {% endfor %}
